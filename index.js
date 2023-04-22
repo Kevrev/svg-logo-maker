@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const jest = require("jest");
 const fs = require('fs')
 
 function writeToFile(fileName, data) {
@@ -12,21 +11,33 @@ function writeToFile(fileName, data) {
 
 function init() {
     const questions = [
-        "Question 1",
-        "Question 2",
+        "Enter text for your shape:",
+        "Enter a color for your text (keyword or hexidecimal):",
+        "Select a shape:",
+        "Enter a color for your shape (keyword or hexidecimal):",
     ];
 
     inquirer.prompt([
         {
             type: 'input',
-            name: 'Question 1',
+            name: 'text',
             message: questions[0]
         },
         {
+            type: 'input',
+            name: 'textColor',
+            message: questions[1]
+        },
+        {
             type: 'list',
-            name: 'Question 2',
-            message: questions[1],
-            choices: [{ name: 'None', value: '' }, 'List 1', 'List 2',]
+            name: 'shape',
+            message: questions[2],
+            choices: ['Circle', 'Triangle', 'Square',]
+        },
+        {
+            type: 'input',
+            name: 'shapeColor',
+            message: questions[3]
         },
     ]).then((answers) => {
 
