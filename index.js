@@ -25,7 +25,7 @@ function init() {
             message: questions[0],
             validate: function (input) {
                 if (input.length > 3) {
-                    return "Please enter a maximum of 3 characters";
+                    return "Please enter a maximum of 3 characters.";
                 }
                 return true;
             }
@@ -33,7 +33,15 @@ function init() {
         {
             type: 'input',
             name: 'textColor',
-            message: questions[1]
+            message: questions[1],
+            validate: function(input) {
+                const validColorOrHex = /^#?([0-9a-fA-F]{3}){1,2}$|^[a-z]+$/i.test(input);
+                if (validColorOrHex) {
+                  return true;
+                } else {
+                  return 'Please enter a valid color name or hexadecimal code.';
+                }
+              }
         },
         {
             type: 'list',
@@ -44,7 +52,15 @@ function init() {
         {
             type: 'input',
             name: 'shapeColor',
-            message: questions[3]
+            message: questions[3],
+            validate: function(input) {
+                const validColorOrHex = /^#?([0-9a-fA-F]{3}){1,2}$|^[a-z]+$/i.test(input);
+                if (validColorOrHex) {
+                  return true;
+                } else {
+                  return 'Please enter a valid color name or hexadecimal code.';
+                }
+              }
         },
     ]).then((answers) => {
 
