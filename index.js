@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require('fs')
+const { Triangle, Square, Circle } = require('./lib/shapes.js');
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, function (err) {
@@ -32,7 +33,7 @@ function init() {
             type: 'list',
             name: 'shape',
             message: questions[2],
-            choices: ['Circle', 'Triangle', 'Square',]
+            choices: ['Triangle', 'Square', 'Circle',]
         },
         {
             type: 'input',
