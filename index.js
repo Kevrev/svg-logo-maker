@@ -22,7 +22,13 @@ function init() {
         {
             type: 'input',
             name: 'text',
-            message: questions[0]
+            message: questions[0],
+            validate: function (input) {
+                if (input.length > 3) {
+                    return "Please enter a maximum of 3 characters";
+                }
+                return true;
+            }
         },
         {
             type: 'input',
