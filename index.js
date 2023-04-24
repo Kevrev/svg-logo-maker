@@ -2,12 +2,12 @@ const inquirer = require("inquirer");
 const fs = require('fs')
 const { Triangle, Square, Circle } = require('./lib/shapes.js');
 
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, function (err) {
-        if (err) throw err;
-        console.log(`File ${fileName} was created`);
-    });
-}
+// function writeToFile(fileName, data) {
+//     fs.writeFile(fileName, data, function (err) {
+//         if (err) throw err;
+//         console.log(`File ${fileName} was created`);
+//     });
+// }
 
 
 function init() {
@@ -42,8 +42,23 @@ function init() {
         },
     ]).then((answers) => {
 
-        console.log(answers);
-        writeToFile('logo.svg', data);
+        let productSvg = ''
+        switch (answers.shape) {
+            case 'Triangle':
+                productSvg = new Triangle(`${answers.shapeColor}`, `${answers.text}`, `${answers.textColor}`);
+                break;
+            case 'Square':
+                productSvg = new Square(`${answers.shapeColor}`, `${answers.text}`, `${answers.textColor}`);
+                break;
+            case 'Circle':
+                productSvg = new Circle(`${answers.shapeColor}`, `${answers.text}`, `${answers.textColor}`);
+                break;
+            default:
+                console.log('Invalid shape selected');
+        }
+        
+        console.log(productSvg);
+        // writeToFile('logo.svg', data);
 
     });
 }
