@@ -2,12 +2,12 @@ const inquirer = require("inquirer");
 const fs = require('fs')
 const { Triangle, Square, Circle } = require('./lib/shapes.js');
 
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, data, function (err) {
-//         if (err) throw err;
-//         console.log(`File ${fileName} was created`);
-//     });
-// }
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, function (err) {
+        if (err) throw err;
+        console.log(`File ${fileName} was created`);
+    });
+}
 
 
 function init() {
@@ -64,23 +64,28 @@ function init() {
         },
     ]).then((answers) => {
 
-        let productSvg = ''
+        let outputShape = ''
         switch (answers.shape) {
             case 'Triangle':
-                productSvg = new Triangle(`${answers.shapeColor}`, `${answers.text}`, `${answers.textColor}`);
+                outputShape = new Triangle(`${answers.shapeColor}`, `${answers.text}`, `${answers.textColor}`);
                 break;
             case 'Square':
-                productSvg = new Square(`${answers.shapeColor}`, `${answers.text}`, `${answers.textColor}`);
+                outputShape = new Square(`${answers.shapeColor}`, `${answers.text}`, `${answers.textColor}`);
                 break;
             case 'Circle':
-                productSvg = new Circle(`${answers.shapeColor}`, `${answers.text}`, `${answers.textColor}`);
+                outputShape = new Circle(`${answers.shapeColor}`, `${answers.text}`, `${answers.textColor}`);
                 break;
             default:
                 console.log('Invalid shape selected');
         }
         
-        console.log(productSvg);
-        // writeToFile('logo.svg', data);
+        const svgTemplate = `<svg width="300" height="200">
+        ${outputShape.render()}
+        <text x="150" y="100" font-size="24" text-anchor="middle" fill="${outputShape.fontColor}">${outputShape.text}</text>
+        </svg>`
+
+        console.log(svgTemplate);
+        writeToFile('logo.svg', svgTemplate);
 
     });
 }
