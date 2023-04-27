@@ -79,10 +79,14 @@ function init() {
                 console.log('Invalid shape selected');
         }
         
-        const svgTemplate = `<svg width="300" height="200">
-        ${outputShape.render()}
-        <text x="150" y="100" font-size="24" text-anchor="middle" fill="${outputShape.fontColor}">${outputShape.text}</text>
-        </svg>`
+        const svgTemplate = `
+        <svg width="300" height="200">
+        \t${outputShape.render()}
+        \t<text x="150" y="${outputShape.axisY}" font-size="40" text-anchor="middle" fill="${outputShape.fontColor}" font-family="Times New Roman">
+        \t\t${outputShape.text}
+        \t</text>
+        </svg>
+        `;
 
         console.log(svgTemplate);
         writeToFile('logo.svg', svgTemplate);
