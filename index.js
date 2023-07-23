@@ -9,7 +9,7 @@ function writeToFile(fileName, data) {
     });
 }
 
-
+// questions for user
 function init() {
     const questions = [
         "Enter text for your shape:",
@@ -78,7 +78,7 @@ function init() {
             default:
                 console.log('Invalid shape selected');
         }
-        
+        // svg template
         const svgTemplate = `
         <svg width="300" height="200">
         \t${outputShape.render()}

@@ -14,7 +14,7 @@ This application utilizes Node.js and the Inquirer package to prompt the user wi
 
 This application runs in the terminal so users will have to download the repository. It also requires users to have [Node.js](https://nodejs.org/en) installed. Once a user has installed Node, navigate to a terminal within the directory of the application. Install the Inquirer package by running the following command in the terminal: `npm install inquirer`. Users may addtionally install jest to run tests to debug the application by running the following command in the terminal: `npm install jest`.
 
-Once the Inquirer package is installed, run the application by running the following command in the terminal: `node index.js`. The application will give users a number of prompts in sequential order. Once all of the prompts are answered, the application will generate a logo file called `logo.svg` in the directory. This file will contain the user's answers to the prompts in an already formatted README file. 
+Once the Inquirer package is installed, run the application by running the following command in the terminal: `node index.js`. The application will give users a number of prompts in sequential order. Once all of the prompts are answered, the application will generate a logo file called `logo.svg` in the directory. This file will contain the code for the SVG, allowing users to implement it elsewhere.
 
 Users can access the deployed GitHub pages site and browse through the different pages. The navbar at the top hosts the links to each page.
 
