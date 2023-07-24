@@ -25,8 +25,8 @@ Link to the deployed website itself:
 https://github.com/Kevrev/svg-logo-maker
 
 A video walkthrough of the application:
+https://github.com/Kevrev/svg-logo-maker/assets/107510684/f68df0a2-68e1-4c47-993d-542a630d1a39
 
-[insert video link here]
 
 ## Technology Used
 
