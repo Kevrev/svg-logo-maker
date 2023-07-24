@@ -16,8 +16,6 @@ This application runs in the terminal so users will have to download the reposit
 
 Once the Inquirer package is installed, run the application by running the following command in the terminal: `node index.js`. The application will give users a number of prompts in sequential order. Once all of the prompts are answered, the application will generate a logo file called `logo.svg` in the directory. This file will contain the code for the SVG, allowing users to implement it elsewhere.
 
-Users can access the deployed GitHub pages site and browse through the different pages. The navbar at the top hosts the links to each page.
-
 ![Screenshot](/assets/images/screenshot.jpg)
 
 Link to the deployed website itself:
