@@ -38,3 +38,4 @@ A video walkthrough of the application:
 
 ## Credits
 
+Credit to [ChatGPT](https://chat.openai.com/) for help in generating a regex that could match both keywords OR hexidecimal values for colors.
